@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://verifactvlc.com/sitemap.xml
+

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>VerifactVLC - Tu negocio al día, sin líos.</title>
+    <meta name="title" content="VerifactVLC - Tu negocio al día, sin líos.">
+    <meta name="description" content="Factura con Odoo y cumple con +Verifactu. La forma más fácil de llevar tu negocio para autónomos y PYMES. Conecta tu banco, pregunta a la IA y olvídate del papeleo.">
+    <meta name="author" content="VerifactVLC">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://verifactvlc.com/">
+    
+    <!-- DNS Prefetch for Performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://verifactvlc.com/">
+    <meta property="og:title" content="VerifactVLC - Tu negocio al día, sin líos.">
+    <meta property="og:description" content="Factura con Odoo y cumple con +Verifactu. La forma más fácil de llevar tu negocio para autónomos y PYMES.">
+    <meta property="og:image" content="https://verifactvlc.com/favicon.svg">
+    <meta property="og:site_name" content="VerifactVLC">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://verifactvlc.com/">
+    <meta name="twitter:title" content="VerifactVLC - Tu negocio al día, sin líos.">
+    <meta name="twitter:description" content="Factura con Odoo y cumple con +Verifactu. La forma más fácil de llevar tu negocio para autónomos y PYMES.">
+    <meta name="twitter:image" content="https://verifactvlc.com/favicon.svg">
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https: https://www.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'self';">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Preconnect for Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "VerifactVLC",
+      "url": "https://verifactvlc.com",
+      "logo": "https://verifactvlc.com/favicon.svg",
+      "description": "Factura con Odoo y cumple con +Verifactu. La forma más fácil de llevar tu negocio para autónomos y PYMES.",
+      "sameAs": [],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "soporte@verifactvlc.com"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "VerifactVLC",
+      "url": "https://verifactvlc.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://verifactvlc.com/ayuda.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Libre Baskerville', 'serif'],
+                    },
+                    colors: {
+                        notion: {
+                            bg: '#FFFFFF',
+                            text: '#050505',
+                            gray: '#37352f',
+                            lightgray: '#F7F7F5',
+                            border: '#E9E9E7'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Simulación de sombras suaves estilo Notion */
+        .shadow-notion {
+            box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
+        }
+        /* Skip to main content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .marquee-content {
+            display: inline-flex;
+            animation: marquee 30s linear infinite;
+        }
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-notion-text font-sans selection:bg-purple-100 flex flex-col min-h-screen">
+    
+    <!-- Promo Banner -->
+    <div id="promo-banner-container"></div>
+    
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-container"></div>
+
+    <!-- Hero Section -->
+    <header id="main-content" class="pt-16 pb-20 lg:pt-24 lg:pb-32 px-4 overflow-hidden">
+        <div class="container mx-auto text-center max-w-4xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-100 text-green-700 text-sm font-medium mb-6">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                Activación al instante. Sin esperas.
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
+                Factura con Odoo.<br>
+                <span class="text-gray-400 font-serif italic">Cumple con +Verifactu</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+                La forma más fácil de llevar tu negocio para autónomos y PYMES. Conecta tu banco, pregunta a la IA y olvídate del papeleo.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-3 mb-16">
+                <a href="precios.html" class="w-full sm:w-auto px-6 py-3 bg-black text-white rounded-[4px] font-medium text-lg hover:bg-gray-800 transition-all hover:-translate-y-0.5 shadow-lg flex items-center justify-center gap-2" aria-label="Crear mi cuenta ahora">
+                    <i data-lucide="rocket" class="w-5 h-5" aria-hidden="true"></i> Crear mi cuenta ya
+                </a>
+                <div class="text-sm text-gray-500 mt-2 sm:mt-0 flex items-center gap-1">
+                    <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Incluye dominio gratis
+                </div>
+            </div>
+
+            <!-- Mockup Visual (Interactive Dashboard) -->
+            <div class="relative w-full max-w-5xl mx-auto animate-float">
+                <div class="bg-white rounded-xl shadow-notion border border-gray-200 overflow-hidden aspect-[16/9] md:aspect-[2/1] text-left flex flex-col">
+                    <!-- Top Navigation Bar -->
+                    <div class="bg-gray-100 border-b border-gray-200 px-4 py-2 flex items-center justify-between text-sm">
+                        <div class="flex items-center gap-4 text-gray-600">
+                            <span class="font-medium text-gray-700">Facturación</span>
+                            <span class="font-medium text-gray-700">Tablero</span>
+                            <span class="text-gray-500">Clientes</span>
+                            <span class="text-gray-500">Proveedores</span>
+                            <span class="text-gray-500">Informes</span>
+                            <span class="text-gray-500">Configuración</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 bg-gray-300 rounded-full"></div>
+                            <div class="w-6 h-6 bg-gray-300 rounded-full"></div>
+                            <div class="w-6 h-6 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- Main Dashboard Content -->
+                    <div class="flex-1 bg-white p-6 md:p-8 flex flex-col relative overflow-hidden">
+                        <!-- Dashboard Header -->
+                        <div class="mb-6 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <button class="bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition-colors">Nuevo Tablero</button>
+                                <span class="text-sm text-gray-600">Tablero</span>
+                            </div>
+                        </div>
+
+                        <!-- Dashboard Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
+                             
+                             <!-- Card 1: Ventas -->
+                             <div class="border border-gray-200 rounded-lg p-5 hover:shadow-lg hover:border-black transition-all duration-300 cursor-pointer group bg-white flex flex-col">
+                                 <div class="mb-4">
+                                     <h3 class="font-bold text-lg text-green-600 mb-2 group-hover:text-green-700">Ventas</h3>
+                                     <button class="bg-black text-white text-xs px-3 py-1.5 rounded hover:bg-gray-800 transition-colors">Nuevo</button>
+                                 </div>
+                                 
+                                 <!-- Bar Chart -->
+                                 <div class="mt-auto">
+                                     <div class="flex items-end gap-2 h-32 border-b border-gray-200 pb-2">
+                                         <div class="flex-1 bg-gray-200 h-[25%] hover:bg-gray-400 transition-all rounded-t relative"></div>
+                                         <div class="flex-1 bg-gray-200 h-[35%] hover:bg-gray-400 transition-all rounded-t relative"></div>
+                                         <div class="flex-1 bg-gray-300 h-[50%] hover:bg-gray-500 transition-all rounded-t relative"></div>
+                                         <div class="flex-1 bg-gray-200 h-[40%] hover:bg-gray-400 transition-all rounded-t relative"></div>
+                                         <div class="flex-1 bg-gray-200 h-[30%] hover:bg-gray-400 transition-all rounded-t relative"></div>
+                                         <div class="flex-1 bg-gray-100 h-[15%] hover:bg-gray-300 transition-all rounded-t relative"></div>
+                                     </div>
+                                     <div class="flex justify-between text-[9px] text-gray-500 mt-2 font-medium">
+                                         <span>Adjudicado</span>
+                                         <span>24 - 30 nov</span>
+                                         <span>Esta semana</span>
+                                         <span>9 - 14 dic</span>
+                                         <span>15 - 21 dic</span>
+                                         <span>No adjudicado</span>
+                                     </div>
+                                 </div>
+                             </div>
+
+                             <!-- Card 2: Compras -->
+                             <div class="border border-gray-200 rounded-lg p-5 hover:shadow-lg hover:border-black transition-all duration-300 cursor-pointer group bg-white flex flex-col">
+                                 <div class="mb-4">
+                                     <h3 class="font-bold text-lg text-green-600 mb-2 group-hover:text-green-700">Compras</h3>
+                                     <div class="flex items-center gap-3 mb-3">
+                                         <button class="bg-black text-white text-xs px-3 py-1.5 rounded hover:bg-gray-800 transition-colors">Subir</button>
+                                         <button class="bg-white text-black text-xs px-3 py-1.5 rounded border border-gray-300 hover:bg-gray-50 transition-colors">Nuevo</button>
+                                         <span class="text-xs text-gray-600">1 A validar</span>
+                                     </div>
+                                 </div>
+                                 
+                                 <!-- Bar Chart -->
+                                 <div class="mt-auto">
+                                     <div class="flex items-end gap-2 h-32 border-b border-gray-200 pb-2">
+                                         <div class="flex-1 bg-gray-200 h-[20%] hover:bg-gray-400 transition-all rounded-t relative"></div>
+                                         <div class="flex-1 bg-gray-200 h-[25%] hover:bg-gray-400 transition-all rounded-t relative"></div>
+                                         <div class="flex-1 bg-gray-300 h-[45%] hover:bg-gray-500 transition-all rounded-t relative"></div>
+                                         <div class="flex-1 bg-gray-300 h-[55%] hover:bg-gray-500 transition-all rounded-t relative"></div>
+                                         <div class="flex-1 bg-gray-200 h-[30%] hover:bg-gray-400 transition-all rounded-t relative"></div>
+                                         <div class="flex-1 bg-gray-100 h-[10%] hover:bg-gray-300 transition-all rounded-t relative"></div>
+                                     </div>
+                                     <div class="flex justify-between text-[9px] text-gray-500 mt-2 font-medium">
+                                         <span>Adjudicado</span>
+                                         <span>24 - 20 nov</span>
+                                         <span>Esta semana</span>
+                                         <span>5 - 14 dic</span>
+                                         <span>15 - 21 dic</span>
+                                         <span>No adjudicado</span>
+                                     </div>
+                                 </div>
+                             </div>
+
+                             <!-- Card 3: Banco -->
+                             <div class="border border-gray-200 rounded-lg p-5 hover:shadow-lg hover:border-black transition-all duration-300 cursor-pointer group bg-white flex flex-col md:col-span-2">
+                                 <div class="mb-4">
+                                     <h3 class="font-bold text-lg text-green-600 mb-3 group-hover:text-green-700">Banco</h3>
+                                     <div class="flex gap-2 mb-4">
+                                         <button class="bg-black text-white text-xs px-3 py-1.5 rounded hover:bg-gray-800 transition-colors">Configuración bancaria</button>
+                                         <button class="bg-black text-white text-xs px-3 py-1.5 rounded hover:bg-gray-800 transition-colors">Transacciones</button>
+                                     </div>
+                                 </div>
+                                 
+                                 <!-- Line Chart -->
+                                 <div class="mt-auto h-32 relative">
+                                     <svg viewBox="0 0 200 60" class="w-full h-full overflow-visible" preserveAspectRatio="none">
+                                         <path d="M0,55 L20,50 L40,35 L60,40 L80,45 L100,42 L120,38 L140,40 L160,35 L180,32 L200,30" 
+                                               fill="none" 
+                                               stroke="#d1d5db" 
+                                               stroke-width="2.5" 
+                                               class="group-hover:stroke-gray-400 transition-colors" />
+                                         <circle cx="40" cy="35" r="3" fill="#3b82f6" opacity="0.7" />
+                                         <circle cx="100" cy="42" r="3" fill="#3b82f6" opacity="0.7" />
+                                         <circle cx="180" cy="32" r="3" fill="#3b82f6" opacity="0.7" />
+                                     </svg>
+                                 </div>
+                             </div>
+
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Social Proof -->
+    <section class="py-10 border-t border-b border-gray-100 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm font-semibold text-gray-500 mb-6 uppercase tracking-wider">Pensado para</p>
+            <div class="marquee-container">
+                <div class="marquee-content opacity-70">
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Empresas Pequeñas</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Empresas Medianas</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Autónomos</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Pymes</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Startups</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Tiendas</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Bares</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Restaurantes</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Consultorías</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Agencias</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Comercios</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Talleres</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Empresas Pequeñas</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Empresas Medianas</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Autónomos</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Pymes</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Startups</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Tiendas</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Bares</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Restaurantes</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Consultorías</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Agencias</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Comercios</span>
+                    <span class="px-4 py-2 bg-gray-50 rounded-full text-gray-700 font-medium border border-gray-200 mx-2 whitespace-nowrap">Talleres</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section Grid -->
+    <section id="ventajas" class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            
+            <div class="mb-16 max-w-2xl">
+                <h2 class="text-4xl font-bold mb-4">Todo lo que necesitas.<br>Nada que te complique.</h2>
+                <p class="text-xl text-gray-600">Hemos metido todo lo potente en una herramienta muy sencilla de usar.</p>
+            </div>
+
+            <!-- New Grid Layout: 3 Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Card 1: Verifactu -->
+                <div id="verifactu" class="col-span-1 md:col-span-2 bg-notion-lightgray rounded-xl border border-gray-200 p-8 hover:border-purple-300 transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i data-lucide="shield-check" class="w-32 h-32 text-purple-600"></i>
+                    </div>
+                    <div class="mb-6 w-12 h-12 bg-white rounded-lg flex items-center justify-center text-purple-600 shadow-sm">
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Hacienda, bajo control (+Verifactu)</h3>
+                    <p class="text-gray-600 mb-6 max-w-md">No te preocupes por la nueva ley antifraude. Nosotros generamos los códigos QR y los registros automáticamente por ti. Duerme tranquilo sabiendo que cumples la ley.</p>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-700 shadow-sm">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Sistema Homologado
+                    </div>
+                </div>
+
+                <!-- Card 2: Free Domain -->
+                <div class="col-span-1 bg-black text-white rounded-xl border border-gray-800 p-8 shadow-lg relative overflow-hidden group hover:scale-[1.02] transition-transform">
+                    <div class="mb-6 w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-white">
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Tu dominio GRATIS</h3>
+                    <p class="text-gray-400 mb-4">Te regalamos tu propio nombre en internet.</p>
+                    <div class="bg-gray-900 p-3 rounded border border-gray-700 font-mono text-sm text-center text-blue-300">
+                        www.tu-negocio.odoo.com
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 text-center">Configurado y listo para usar.</p>
+                </div>
+
+                <!-- Card 3: Banking -->
+                <div class="col-span-1 bg-notion-lightgray rounded-xl border border-gray-200 p-8 hover:border-blue-300 transition-colors">
+                    <div class="mb-6 w-12 h-12 bg-white rounded-lg flex items-center justify-center text-blue-600 shadow-sm">
+                        <i data-lucide="landmark" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Tus bancos conectados</h3>
+                    <p class="text-gray-600 text-sm">Olvídate de entrar en la web del banco para ver si te han pagado. Conecta tus cuentas y controla tu saldo desde aquí.</p>
+                </div>
+
+                <!-- Card 4: AI -->
+                <div id="ia" class="col-span-1 bg-notion-lightgray rounded-xl border border-gray-200 p-8 hover:border-pink-300 transition-colors">
+                    <div class="mb-6 w-12 h-12 bg-white rounded-lg flex items-center justify-center text-pink-500 shadow-sm">
+                        <i data-lucide="bot" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Pregúntale a tu negocio</h3>
+                    <p class="text-gray-600 text-sm">"¿Cuánto facturé el mes pasado?"<br>Tu asistente IA te responde al momento. Sin buscar en informes complicados.</p>
+                </div>
+
+                <!-- Card 5: Email -->
+                <div class="col-span-1 bg-notion-lightgray rounded-xl border border-gray-200 p-8 hover:border-orange-300 transition-colors">
+                    <div class="mb-6 w-12 h-12 bg-white rounded-lg flex items-center justify-center text-orange-500 shadow-sm">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Facturas por Email</h3>
+                    <p class="text-gray-600 text-sm">Nada de imprimir y ensobrar. Envía tus facturas y comunicados directamente al email de tu cliente con un clic.</p>
+                </div>
+
+                <!-- Card 6: Import/Export -->
+                <div class="col-span-1 md:col-span-3 bg-white rounded-xl border border-gray-200 p-8 flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-6">
+                        <div class="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center text-gray-700 border border-gray-200">
+                            <i data-lucide="hard-drive" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Tus datos son tuyos</h3>
+                            <p class="text-gray-600">Importa tus clientes desde Excel o exporta todo cuando quieras. Sin ataduras.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i data-lucide="file-spreadsheet" class="w-4 h-4"></i> Excel / CSV
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i data-lucide="download" class="w-4 h-4"></i> Descarga total
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="precios" class="py-24 bg-white border-t border-gray-100">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Precios transparentes</h2>
+                <p class="text-xl text-gray-600">Elige el plan que mejor se adapte a tu negocio</p>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Plan Mensual -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-black transition-colors">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Plan Mensual</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold">29€</span>
+                            <span class="text-gray-500">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
+                            <span>Facturación ilimitada</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
+                            <span>+Verifactu incluido</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
+                            <span>Conexión bancaria</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
+                            <span>Asistente IA</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
+                            <span>Envío de facturas por email</span>
+                        </li>
+                    </ul>
+                    <a href="precios.html" class="block w-full text-center py-3 bg-gray-100 text-black rounded-[4px] font-medium hover:bg-gray-200 transition-colors" aria-label="Empezar con plan mensual">
+                        Empezar ahora
+                    </a>
+                </div>
+
+                <!-- Plan Anual (Recomendado) -->
+                <div class="bg-black text-white border-2 border-black rounded-xl p-8 relative hover:scale-[1.02] transition-transform shadow-lg">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                        Más popular
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Plan Anual</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold">290€</span>
+                            <span class="text-gray-400">/año</span>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2">Ahorra 58€ al año</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-green-400" aria-hidden="true"></i>
+                            <span>Todo del plan mensual</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-green-400" aria-hidden="true"></i>
+                            <span><strong>Dominio gratis</strong> (primer año)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-green-400" aria-hidden="true"></i>
+                            <span>Soporte prioritario</span>
+                        </li>
+                    </ul>
+                    <a href="precios.html" class="block w-full text-center py-3 bg-white text-black rounded-[4px] font-medium hover:bg-gray-100 transition-colors" aria-label="Empezar con plan anual">
+                        Empezar ahora
+                    </a>
+                </div>
+
+                <!-- Plan Enterprise -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-black transition-colors">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Plan Enterprise</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold">Personalizado</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500" aria-hidden="true"></i>
+                            <span>Todo del plan anual</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500" aria-hidden="true"></i>
+                            <span>Integración empresarial</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 mt-0.5" aria-hidden="true"></i>
+                            <span>Sistemas adicionales: Fabricación, control de calidad, CRM...</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500" aria-hidden="true"></i>
+                            <span>Soporte dedicado</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500" aria-hidden="true"></i>
+                            <span>Formación personalizada</span>
+                        </li>
+                    </ul>
+                    <a href="mailto:contacto@verifactvlc.com?subject=Consulta Plan Enterprise" class="block w-full text-center py-3 bg-gray-100 text-black rounded-[4px] font-medium hover:bg-gray-200 transition-colors" aria-label="Contactar sobre plan enterprise">
+                        Contacta con Nosotros
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ver preguntas sobre precios -->
+            <div class="text-center mt-8">
+                <a href="precios.html" class="inline-flex items-center gap-2 text-gray-600 hover:text-black transition-colors font-medium">
+                    <i data-lucide="help-circle" class="w-5 h-5"></i>
+                    Ver preguntas relacionadas sobre el precio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-notion-lightgray border-t border-gray-200">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-bold mb-12 text-center tracking-tight">Preguntas Frecuentes</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <details class="group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                        <span>¿Qué es exactamente +Verifactu y por qué me afecta?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed pl-1">
+                        Es el nuevo sistema de Hacienda para luchar contra el fraude fiscal. Obliga a que los programas de facturación generen registros inalterables y (opcionalmente) los envíen automáticamente. Con VerifactVLC, tu sistema ya viene 100% adaptado y cumple con la normativa sin que tú tengas que configurar nada.
+                    </p>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                        <span>¿Necesito conocimientos técnicos o contables?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed pl-1">
+                        Para nada. Hemos diseñado la interfaz pensando en autónomos y dueños de pequeños negocios, no en informáticos. Si sabes enviar un correo electrónico y usar el móvil, ya sabes usar VerifactVLC. Además, nuestro asistente IA te ayuda a entender tus datos.
+                    </p>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                        <span>¿Es seguro conectar mis cuentas bancarias?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed pl-1">
+                        Totalmente. Utilizamos proveedores regulados por la normativa europea PSD2 (la misma que usan los bancos) para leer tus movimientos en modo "solo lectura". Nosotros nunca podemos tocar tu dinero, solo te mostramos la información para que cuadres tus facturas.
+                    </p>
+                </details>
+                
+                 <!-- FAQ Item 4 -->
+                <details class="group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                        <span>¿Qué pasa con mis datos si decido darme de baja?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed pl-1">
+                        Tus datos son 100% tuyos. Puedes exportar todas tus facturas, contactos y movimientos a Excel o CSV en cualquier momento con un solo clic. Sin permanencias, sin letras pequeñas y sin secuestrar tu información.
+                    </p>
+                </details>
+
+                <!-- FAQ Item 5 -->
+                <details class="group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                        <span>¿Cómo funciona lo del dominio gratis?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed pl-1">
+                        Al activar tu cuenta anual, te regalamos un subdominio dentro de odoo.com (ej: tu-negocio.odoo.com) durante el primer año y lo configuramos automáticamente para que tus facturas salgan con tu propio nombre, dando una imagen mucho más profesional. <strong>Nota:</strong> No incluye el registro de un dominio propio (.com, .es, etc.).
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="py-24 border-t border-gray-100 bg-white">
+        <div class="container mx-auto px-4 text-center max-w-2xl">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Empieza en segundos</h2>
+            <p class="text-lg text-gray-600 mb-8">Sin instalaciones raras. Sin llamar a un técnico. Te registras y ya estás facturando.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3">
+                <a href="precios.html" class="px-8 py-3 bg-black text-white rounded-[4px] font-medium text-lg hover:bg-gray-800 transition-colors shadow-lg flex items-center justify-center gap-2" aria-label="Crear cuenta ahora">
+                    <i data-lucide="zap" class="w-5 h-5" aria-hidden="true"></i> Quiero mi cuenta ahora
+                </a>
+            </div>
+            <p class="mt-6 text-sm text-gray-500">
+                <i data-lucide="check" class="w-3 h-3 inline mr-1 text-green-600"></i> Cancelas cuando quieras
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts Container -->
+    <div id="scripts-container"></div>
+
+    <!-- Cookie Consent -->
+    <div id="cookie-consent-container"></div>
+
+    <!-- Load Components -->
+    <script src="components/pages-config.js"></script>
+    <script src="components/promo-banner.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/mobile-menu.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/scripts.js"></script>
+    <script src="components/analytics.js"></script>
+    <script src="components/cookie-consent.js"></script>
+    <script>
+        // Inject components after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inject promo banner
+            const promoBannerContainer = document.getElementById('promo-banner-container');
+            if (promoBannerContainer && typeof renderPromoBanner !== 'undefined') {
+                promoBannerContainer.outerHTML = renderPromoBanner();
+                if (typeof initPromoBannerCountdown !== 'undefined') {
+                    initPromoBannerCountdown();
+                }
+            }
+            
+            // Inject navbar
+            const navbarContainer = document.getElementById('navbar-container');
+            if (navbarContainer && typeof renderNavbar !== 'undefined') {
+                navbarContainer.outerHTML = renderNavbar('home');
+            }
+
+            // Inject mobile menu
+            const mobileMenuContainer = document.getElementById('mobile-menu-container');
+            if (mobileMenuContainer && typeof renderMobileMenu !== 'undefined') {
+                mobileMenuContainer.outerHTML = renderMobileMenu('home');
+            }
+
+            // Inject footer
+            const footerContainer = document.getElementById('footer-container');
+            if (footerContainer && typeof renderFooter !== 'undefined') {
+                footerContainer.outerHTML = renderFooter();
+            }
+
+            // Inject common scripts
+            const scriptsContainer = document.getElementById('scripts-container');
+            if (scriptsContainer && typeof renderCommonScripts !== 'undefined') {
+                scriptsContainer.outerHTML = renderCommonScripts();
+            }
+
+            // Inject cookie consent
+            const cookieConsentContainer = document.getElementById('cookie-consent-container');
+            if (cookieConsentContainer && typeof renderCookieConsent !== 'undefined') {
+                cookieConsentContainer.outerHTML = renderCookieConsent();
+            }
+
+            // Inject analytics (will only load if consent was given)
+            if (typeof renderAnalytics !== 'undefined') {
+                const analyticsHTML = renderAnalytics();
+                if (analyticsHTML) {
+                    document.head.insertAdjacentHTML('beforeend', analyticsHTML);
+                }
+            }
+
+            // Reinitialize icons after injection
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
