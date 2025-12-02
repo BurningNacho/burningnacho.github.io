@@ -33,7 +33,7 @@ function renderPromoBanner() {
                     </div>
                 </div>
                 <div class="text-center text-xs">
-                    <a href="mailto:contacto@verifactvlc.com" class="underline hover:text-blue-200 transition-colors font-semibold">contacto@verifactvlc.com</a>
+                    <a href="mailto:verifactvlc@gmail.com" class="underline hover:text-blue-200 transition-colors font-semibold">verifactvlc@gmail.com</a>
                 </div>
             </div>
             
@@ -65,7 +65,7 @@ function renderPromoBanner() {
                 
                 <div class="text-right">
                     <span class="font-semibold">Habla con nosotros: </span>
-                    <a href="mailto:contacto@verifactvlc.com" class="underline hover:text-blue-200 transition-colors font-bold">contacto@verifactvlc.com</a>
+                    <a href="mailto:verifactvlc@gmail.com" class="underline hover:text-blue-200 transition-colors font-bold">verifactvlc@gmail.com</a>
                 </div>
             </div>
         </div>

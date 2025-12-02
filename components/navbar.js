@@ -76,7 +76,7 @@ function renderNavbar(activePage = "home") {
 
             <!-- Botones Acción -->
             <div class="hidden lg:flex items-center gap-4 text-sm font-medium">
-                <a href="mailto:login@verifactvlc.com" class="hover:text-gray-900 transition-colors" aria-label="Iniciar sesión">Entrar</a>
+                <a href="mailto:verifactvlc@gmail.com" class="hover:text-gray-900 transition-colors" aria-label="Iniciar sesión">Entrar</a>
                 <a href="precios.html" class="bg-black text-white px-4 py-2 rounded-[4px] hover:bg-gray-800 transition-colors shadow-sm flex items-center gap-2" aria-label="Empezar ahora">
                     <i data-lucide="zap" class="w-4 h-4" aria-hidden="true"></i> Empezar ahora
                 </a>

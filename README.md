@@ -216,7 +216,7 @@ Si el Content Security Policy es muy restrictivo, ajusta los meta tags CSP en ca
 ## 📞 Contacto
 
 Para preguntas o soporte:
-- Email: soporte@verifactvlc.com
+- Email: verifactvlc@gmail.com
 - Web: https://verifactvlc.com
 
 ---

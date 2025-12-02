@@ -59,7 +59,7 @@ function renderMobileMenu(activePage = "home") {
     pages.privacidad
   )}" onclick="toggleMenu()">Privacidad</a>
         <div class="mt-8 flex flex-col gap-4">
-            <a href="mailto:login@verifactvlc.com" class="text-center py-3 rounded-md bg-gray-100 font-medium" onclick="toggleMenu()" aria-label="Iniciar sesión">Entrar</a>
+            <a href="mailto:verifactvlc@gmail.com" class="text-center py-3 rounded-md bg-gray-100 font-medium" onclick="toggleMenu()" aria-label="Iniciar sesión">Entrar</a>
             <a href="precios.html" class="text-center py-3 rounded-md bg-black text-white font-medium" onclick="toggleMenu()" aria-label="Empezar ahora">Empezar ahora</a>
         </div>
     </div>
