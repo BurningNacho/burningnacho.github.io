@@ -56,7 +56,7 @@ function renderNavbar(activePage = "home") {
             </a>
 
             <!-- Enlaces Desktop -->
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+            <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-600">
                 <a href="${pages.precios.href}" class="${getLinkClass(
     pages.precios
   )}">Precios</a>
@@ -75,7 +75,7 @@ function renderNavbar(activePage = "home") {
             </div>
 
             <!-- Botones Acción -->
-            <div class="hidden md:flex items-center gap-4 text-sm font-medium">
+            <div class="hidden lg:flex items-center gap-4 text-sm font-medium">
                 <a href="mailto:login@verifactvlc.com" class="hover:text-gray-900 transition-colors" aria-label="Iniciar sesión">Entrar</a>
                 <a href="precios.html" class="bg-black text-white px-4 py-2 rounded-[4px] hover:bg-gray-800 transition-colors shadow-sm flex items-center gap-2" aria-label="Empezar ahora">
                     <i data-lucide="zap" class="w-4 h-4" aria-hidden="true"></i> Empezar ahora
@@ -84,7 +84,7 @@ function renderNavbar(activePage = "home") {
 
             <!-- Mobile Menu Button -->
             <button 
-                class="md:hidden p-2 hover:bg-gray-100 rounded-md" 
+                class="lg:hidden p-2 hover:bg-gray-100 rounded-md" 
                 onclick="toggleMenu()"
                 aria-label="Abrir menú de navegación"
                 aria-expanded="false"

@@ -3,40 +3,70 @@
  */
 function renderPromoBanner() {
   return `
-    <div class="bg-blue-600 text-white py-3 px-4 text-base md:text-lg">
-        <div class="container mx-auto relative min-h-[2.5rem]">
-            <!-- Left: Promo Text - Completely to the left -->
-            <div class="absolute left-0 top-1/2 -translate-y-1/2 text-center md:text-left">
-                <span class="font-bold">Anticípate a Verifactu:</span>
-                <span class="ml-1 font-semibold">50% descuento por 3 meses</span>
-            </div>
-            
-            <!-- Center: Countdown Timer - Centered -->
-            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div class="flex items-center gap-3 md:gap-4" id="countdown-timer">
+    <div class="bg-blue-600 text-white py-2 md:py-3 px-4 text-sm md:text-base lg:text-lg">
+        <div class="container mx-auto">
+            <!-- Mobile Layout: Stacked -->
+            <div class="flex flex-col md:hidden items-center gap-2 py-1">
+                <div class="text-center">
+                    <span class="font-bold">Anticípate a Verifactu:</span>
+                    <span class="ml-1 font-semibold">50% descuento por 3 meses</span>
+                </div>
+                <div class="flex items-center gap-2" id="countdown-timer">
                     <div class="flex flex-col items-center">
-                        <span class="font-bold text-2xl md:text-3xl" id="countdown-days">0</span>
-                        <span class="text-xs md:text-sm font-medium text-blue-200">DÍAS</span>
+                        <span class="font-bold text-xl" id="countdown-days">0</span>
+                        <span class="text-[10px] font-medium text-blue-200">D</span>
                     </div>
+                    <span class="text-blue-200">:</span>
                     <div class="flex flex-col items-center">
-                        <span class="font-bold text-2xl md:text-3xl" id="countdown-hours">0</span>
-                        <span class="text-xs md:text-sm font-medium text-blue-200">HORAS</span>
+                        <span class="font-bold text-xl" id="countdown-hours">0</span>
+                        <span class="text-[10px] font-medium text-blue-200">H</span>
                     </div>
+                    <span class="text-blue-200">:</span>
                     <div class="flex flex-col items-center">
-                        <span class="font-bold text-2xl md:text-3xl" id="countdown-minutes">0</span>
-                        <span class="text-xs md:text-sm font-medium text-blue-200">MINUTOS</span>
+                        <span class="font-bold text-xl" id="countdown-minutes">0</span>
+                        <span class="text-[10px] font-medium text-blue-200">M</span>
                     </div>
+                    <span class="text-blue-200">:</span>
                     <div class="flex flex-col items-center">
-                        <span class="font-bold text-2xl md:text-3xl" id="countdown-seconds">0</span>
-                        <span class="text-xs md:text-sm font-medium text-blue-200">SEGUNDOS</span>
+                        <span class="font-bold text-xl" id="countdown-seconds">0</span>
+                        <span class="text-[10px] font-medium text-blue-200">S</span>
                     </div>
+                </div>
+                <div class="text-center text-xs">
+                    <a href="mailto:contacto@verifactvlc.com" class="underline hover:text-blue-200 transition-colors font-semibold">contacto@verifactvlc.com</a>
                 </div>
             </div>
             
-            <!-- Right: Contact - Completely to the right -->
-            <div class="absolute right-0 top-1/2 -translate-y-1/2 text-center md:text-right">
-                <span class="font-semibold">Habla con nosotros: </span>
-                <a href="mailto:contacto@verifactvlc.com" class="underline hover:text-blue-200 transition-colors font-bold">contacto@verifactvlc.com</a>
+            <!-- Desktop Layout: Horizontal -->
+            <div class="hidden md:flex relative min-h-[2.5rem] items-center justify-between">
+                <div class="text-left">
+                    <span class="font-bold">Anticípate a Verifactu:</span>
+                    <span class="ml-1 font-semibold">50% descuento por 3 meses</span>
+                </div>
+                
+                <div class="flex items-center gap-3 lg:gap-4" id="countdown-timer-desktop">
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-2xl lg:text-3xl" id="countdown-days-desktop">0</span>
+                        <span class="text-xs lg:text-sm font-medium text-blue-200">DÍAS</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-2xl lg:text-3xl" id="countdown-hours-desktop">0</span>
+                        <span class="text-xs lg:text-sm font-medium text-blue-200">HORAS</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-2xl lg:text-3xl" id="countdown-minutes-desktop">0</span>
+                        <span class="text-xs lg:text-sm font-medium text-blue-200">MINUTOS</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-2xl lg:text-3xl" id="countdown-seconds-desktop">0</span>
+                        <span class="text-xs lg:text-sm font-medium text-blue-200">SEGUNDOS</span>
+                    </div>
+                </div>
+                
+                <div class="text-right">
+                    <span class="font-semibold">Habla con nosotros: </span>
+                    <a href="mailto:contacto@verifactvlc.com" class="underline hover:text-blue-200 transition-colors font-bold">contacto@verifactvlc.com</a>
+                </div>
             </div>
         </div>
     </div>
@@ -64,8 +94,14 @@ function initPromoBannerCountdown() {
     const hoursEl = document.getElementById("countdown-hours");
     const minutesEl = document.getElementById("countdown-minutes");
     const secondsEl = document.getElementById("countdown-seconds");
+    
+    const daysElDesktop = document.getElementById("countdown-days-desktop");
+    const hoursElDesktop = document.getElementById("countdown-hours-desktop");
+    const minutesElDesktop = document.getElementById("countdown-minutes-desktop");
+    const secondsElDesktop = document.getElementById("countdown-seconds-desktop");
 
-    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+    if ((!daysEl || !hoursEl || !minutesEl || !secondsEl) && 
+        (!daysElDesktop || !hoursElDesktop || !minutesElDesktop || !secondsElDesktop)) {
       setTimeout(initCountdown, 100);
       return;
     }
@@ -89,10 +125,15 @@ function initPromoBannerCountdown() {
         );
 
         if (!ts || ts.value <= 0) {
-          daysEl.textContent = "0";
-          hoursEl.textContent = "0";
-          minutesEl.textContent = "0";
-          secondsEl.textContent = "0";
+          const zero = "0";
+          if (daysEl) daysEl.textContent = zero;
+          if (hoursEl) hoursEl.textContent = zero;
+          if (minutesEl) minutesEl.textContent = zero;
+          if (secondsEl) secondsEl.textContent = zero;
+          if (daysElDesktop) daysElDesktop.textContent = zero;
+          if (hoursElDesktop) hoursElDesktop.textContent = zero;
+          if (minutesElDesktop) minutesElDesktop.textContent = zero;
+          if (secondsElDesktop) secondsElDesktop.textContent = zero;
           return;
         }
 
@@ -101,10 +142,20 @@ function initPromoBannerCountdown() {
         const minutes = ts.minutes || 0;
         const seconds = ts.seconds || 0;
 
-        daysEl.textContent = String(days);
-        hoursEl.textContent = String(hours);
-        minutesEl.textContent = String(minutes);
-        secondsEl.textContent = String(seconds);
+        const daysStr = String(days);
+        const hoursStr = String(hours);
+        const minutesStr = String(minutes);
+        const secondsStr = String(seconds);
+
+        if (daysEl) daysEl.textContent = daysStr;
+        if (hoursEl) hoursEl.textContent = hoursStr;
+        if (minutesEl) minutesEl.textContent = minutesStr;
+        if (secondsEl) secondsEl.textContent = secondsStr;
+        
+        if (daysElDesktop) daysElDesktop.textContent = daysStr;
+        if (hoursElDesktop) hoursElDesktop.textContent = hoursStr;
+        if (minutesElDesktop) minutesElDesktop.textContent = minutesStr;
+        if (secondsElDesktop) secondsElDesktop.textContent = secondsStr;
       }
 
       updateCountdown();

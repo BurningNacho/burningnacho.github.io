@@ -42,7 +42,7 @@ function renderMobileMenu(activePage = "home") {
   };
 
   return `
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col pt-20 px-6" role="navigation" aria-label="Menú de navegación móvil">
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-20 px-6" role="navigation" aria-label="Menú de navegación móvil">
         <a href="${pages.precios.href}" class="${getLinkClass(
     pages.precios
   )}" onclick="toggleMenu()">Precios</a>
