@@ -474,10 +474,10 @@
             <!-- Billing Toggle -->
             <div class="flex justify-center mb-12">
                 <div class="inline-flex bg-gray-100 rounded-lg p-1 gap-1">
-                    <button id="tab-monthly" class="px-6 py-2 rounded-md font-medium transition-colors bg-white text-black shadow-sm">
+                    <button id="tab-monthly" class="px-6 py-2 rounded-md font-medium transition-colors text-gray-600 hover:text-black">
                         Mensual
                     </button>
-                    <button id="tab-annual" class="px-6 py-2 rounded-md font-medium transition-colors text-gray-600 hover:text-black">
+                    <button id="tab-annual" class="px-6 py-2 rounded-md font-medium transition-colors bg-white text-black shadow-sm">
                         Anual
                     </button>
                 </div>
@@ -796,7 +796,7 @@
                 premium: 78
             };
 
-            let isAnnual = false;
+            let isAnnual = true;
 
             function updatePricing() {
                 if (isAnnual) {
@@ -850,6 +850,9 @@
                     isAnnual = true;
                     updatePricing();
                 });
+
+                // Initialize with annual pricing
+                updatePricing();
             }
         });
     </script>

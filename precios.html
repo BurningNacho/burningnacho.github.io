@@ -164,12 +164,11 @@
             <!-- Billing Toggle -->
             <div class="flex justify-center mb-12">
                 <div class="inline-flex bg-gray-100 rounded-lg p-1 gap-1">
-                    <button id="tab-monthly" class="px-6 py-2 rounded-md font-medium transition-colors bg-white text-black shadow-sm">
+                    <button id="tab-monthly" class="px-6 py-2 rounded-md font-medium transition-colors text-gray-600 hover:text-black">
                         Mensual
                     </button>
-                    <button id="tab-annual" class="px-6 py-2 rounded-md font-medium transition-colors text-gray-600 hover:text-black">
+                    <button id="tab-annual" class="px-6 py-2 rounded-md font-medium transition-colors bg-white text-black shadow-sm">
                         Anual
-
                     </button>
                 </div>
             </div>
@@ -308,6 +307,7 @@
                                     <th class="text-center p-4 font-semibold text-gray-700">Básico</th>
                                     <th class="text-center p-4 font-semibold text-gray-700">Premium</th>
                                     <th class="text-center p-4 font-semibold text-gray-700">Enterprise</th>
+                                    <th class="text-center p-4 font-semibold text-gray-700">Competencia<br><span class="text-xs font-normal text-gray-500"></th>
                                 </tr>
                             </thead>
                             <tbody id="comparison-table-body">
@@ -316,27 +316,32 @@
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Límites por trimestre<br>(100-1000 facturas)</span></td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 text-gray-700">Verifactu gratis</td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 text-gray-700">Conexión bancaria</td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitada según<br>el plan</span></td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 text-gray-700">Asistente IA</td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 text-gray-700">Envío de facturas por email</td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
@@ -346,36 +351,42 @@
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 text-gray-700">Soporte prioritario</td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</span></td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 text-gray-700">Integración empresarial</td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</span></td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 text-gray-700">Sistemas adicionales (Fabricación, CRM, etc.)</td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</span></td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 text-gray-700">Soporte dedicado</td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</span></td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 text-gray-700">Formación personalizada</td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</span></td>
                             </tr>
                         </tbody>
                         </table>
@@ -535,7 +546,7 @@
                 premium: 78
             };
 
-            let isAnnual = false;
+            let isAnnual = true;
 
             function updatePricing() {
                 if (isAnnual) {
@@ -588,6 +599,9 @@
                 isAnnual = true;
                 updatePricing();
             });
+
+            // Initialize with annual pricing
+            updatePricing();
 
             // Table blur toggle functionality
             const tableBlurContainer = document.querySelector('.table-blur');
