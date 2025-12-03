@@ -43,11 +43,10 @@
     <meta name="twitter:image" content="https://verifactvlc.com/favicon.svg">
     
     <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https: https://www.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https: https://www.google-analytics.com https://www.googletagmanager.com;">
     
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
@@ -472,25 +471,43 @@
                 <p class="text-xl text-gray-600">Elige el plan que mejor se adapte a tu negocio</p>
             </div>
 
+            <!-- Billing Toggle -->
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex bg-gray-100 rounded-lg p-1 gap-1">
+                    <button id="tab-monthly" class="px-6 py-2 rounded-md font-medium transition-colors bg-white text-black shadow-sm">
+                        Mensual
+                    </button>
+                    <button id="tab-annual" class="px-6 py-2 rounded-md font-medium transition-colors text-gray-600 hover:text-black">
+                        Anual
+                    </button>
+                </div>
+            </div>
+
             <!-- Pricing Cards -->
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Plan Mensual -->
-                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-black transition-colors">
+                <!-- Plan Básico -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-black transition-colors relative">
+                    <div id="popular-badge-basic" class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                        Más popular
+                    </div>
                     <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Plan Mensual</h3>
+                        <h3 class="text-2xl font-bold mb-2">Básico</h3>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-4xl font-bold">29€</span>
-                            <span class="text-gray-500">/mes</span>
+                            <span class="text-4xl font-bold" id="price-basic">29€</span>
+                            <span class="text-gray-500" id="period-basic">/mes</span>
+                        </div>
+                        <div class="mt-2 h-5" id="annual-savings-basic" style="visibility: hidden;">
+                            <span class="text-sm text-gray-500 line-through" id="annual-price-basic"></span>
+                            <span class="text-sm text-green-500 ml-2" id="annual-savings-text-basic"></span>
+                        </div>
+                        <div class="mt-4 flex justify-center">
+                            <span class="bg-green-100 text-black px-4 py-1.5 rounded-md text-sm font-medium">Incluye Verifactu</span>
                         </div>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-2 text-gray-700">
                             <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
                             <span>Facturación ilimitada</span>
-                        </li>
-                        <li class="flex items-center gap-2 text-gray-700">
-                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
-                            <span>+Verifactu incluido</span>
                         </li>
                         <li class="flex items-center gap-2 text-gray-700">
                             <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
@@ -504,40 +521,46 @@
                             <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
                             <span>Envío de facturas por email</span>
                         </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
+                            <span><strong>Tu subdominio gratis</strong></span>
+                        </li>
                     </ul>
-                    <a href="precios.html" class="block w-full text-center py-3 bg-gray-100 text-black rounded-[4px] font-medium hover:bg-gray-200 transition-colors" aria-label="Empezar con plan mensual">
+                    <a href="precios.html" class="block w-full text-center py-3 bg-gray-100 text-black rounded-[4px] font-medium hover:bg-gray-200 transition-colors" aria-label="Empezar con plan básico">
                         Empezar ahora
                     </a>
                 </div>
 
-                <!-- Plan Anual (Recomendado) -->
+                <!-- Plan Premium -->
                 <div class="bg-black text-white border-2 border-black rounded-xl p-8 relative hover:scale-[1.02] transition-transform shadow-lg">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                    <div id="popular-badge-premium" class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium" style="display: none;">
                         Más popular
                     </div>
                     <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Plan Anual</h3>
+                        <h3 class="text-2xl font-bold mb-2">Premium</h3>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-4xl font-bold">290€</span>
-                            <span class="text-gray-400">/año</span>
+                            <span class="text-4xl font-bold" id="price-premium">39€</span>
+                            <span class="text-gray-400" id="period-premium">/mes</span>
                         </div>
-                        <p class="text-sm text-gray-400 mt-2">Ahorra 58€ al año</p>
+                        <div class="mt-2 h-5" id="annual-savings-premium" style="visibility: hidden;">
+                            <span class="text-sm text-gray-400 line-through" id="annual-price-premium"></span>
+                            <span class="text-sm text-green-400 ml-2" id="annual-savings-text-premium"></span>
+                        </div>
+                        <div class="mt-4 flex justify-center">
+                            <span class="bg-green-500 text-white px-4 py-1.5 rounded-md text-sm font-medium">Incluye Verifactu</span>
+                        </div>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-5 h-5 text-green-400" aria-hidden="true"></i>
-                            <span>Todo del plan mensual</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400" aria-hidden="true"></i>
-                            <span><strong>Dominio gratis</strong> (primer año)</span>
+                            <span>Todo del plan básico</span>
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-5 h-5 text-green-400" aria-hidden="true"></i>
                             <span>Soporte prioritario</span>
                         </li>
                     </ul>
-                    <a href="precios.html" class="block w-full text-center py-3 bg-white text-black rounded-[4px] font-medium hover:bg-gray-100 transition-colors" aria-label="Empezar con plan anual">
+                    <a href="precios.html" class="block w-full text-center py-3 bg-white text-black rounded-[4px] font-medium hover:bg-gray-100 transition-colors" aria-label="Empezar con plan premium">
                         Empezar ahora
                     </a>
                 </div>
@@ -545,15 +568,18 @@
                 <!-- Plan Enterprise -->
                 <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-black transition-colors">
                     <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Plan Enterprise</h3>
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
                         <div class="flex items-baseline gap-2">
                             <span class="text-4xl font-bold">Personalizado</span>
+                        </div>
+                        <div class="mt-4 flex justify-center">
+                            <span class="bg-green-100 text-black px-4 py-1.5 rounded-md text-sm font-medium">Incluye Verifactu</span>
                         </div>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-2 text-gray-700">
                             <i data-lucide="check" class="w-5 h-5 text-green-500" aria-hidden="true"></i>
-                            <span>Todo del plan anual</span>
+                            <span>Todo del plan premium</span>
                         </li>
                         <li class="flex items-center gap-2 text-gray-700">
                             <i data-lucide="check" class="w-5 h-5 text-green-500" aria-hidden="true"></i>
@@ -739,6 +765,91 @@
             // Reinitialize icons after injection
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
+            }
+
+            // Pricing tabs functionality
+            const tabMonthly = document.getElementById('tab-monthly');
+            const tabAnnual = document.getElementById('tab-annual');
+            const priceBasic = document.getElementById('price-basic');
+            const periodBasic = document.getElementById('period-basic');
+            const annualSavingsBasic = document.getElementById('annual-savings-basic');
+            const annualPriceBasic = document.getElementById('annual-price-basic');
+            const annualSavingsTextBasic = document.getElementById('annual-savings-text-basic');
+            const popularBadgeBasic = document.getElementById('popular-badge-basic');
+            const pricePremium = document.getElementById('price-premium');
+            const periodPremium = document.getElementById('period-premium');
+            const annualSavingsPremium = document.getElementById('annual-savings-premium');
+            const annualPricePremium = document.getElementById('annual-price-premium');
+            const annualSavingsTextPremium = document.getElementById('annual-savings-text-premium');
+            const popularBadgePremium = document.getElementById('popular-badge-premium');
+
+            const monthlyPrices = {
+                basic: 29,
+                premium: 39
+            };
+            const annualPrices = {
+                basic: 290,
+                premium: 390
+            };
+            const savings = {
+                basic: 58,
+                premium: 78
+            };
+
+            let isAnnual = false;
+
+            function updatePricing() {
+                if (isAnnual) {
+                    tabMonthly.classList.remove('bg-white', 'text-black', 'shadow-sm');
+                    tabMonthly.classList.add('text-gray-600');
+                    tabAnnual.classList.add('bg-white', 'text-black', 'shadow-sm');
+                    tabAnnual.classList.remove('text-gray-600');
+                    
+                    const monthlyBasic = (annualPrices.basic / 12).toFixed(2).replace('.', ',');
+                    priceBasic.textContent = `${monthlyBasic}€`;
+                    periodBasic.textContent = '/mes';
+                    const annualTotalBasic = (monthlyPrices.basic * 12).toFixed(2).replace('.', ',');
+                    annualPriceBasic.textContent = `${annualTotalBasic}€`;
+                    annualSavingsTextBasic.textContent = `Ahorra ${savings.basic}€ al año`;
+                    annualSavingsBasic.style.visibility = 'visible';
+                    popularBadgeBasic.style.display = 'none';
+                    
+                    const monthlyPremium = (annualPrices.premium / 12).toFixed(2).replace('.', ',');
+                    pricePremium.textContent = `${monthlyPremium}€`;
+                    periodPremium.textContent = '/mes';
+                    const annualTotalPremium = (monthlyPrices.premium * 12).toFixed(2).replace('.', ',');
+                    annualPricePremium.textContent = `${annualTotalPremium}€`;
+                    annualSavingsTextPremium.textContent = `Ahorra ${savings.premium}€ al año`;
+                    annualSavingsPremium.style.visibility = 'visible';
+                    popularBadgePremium.style.display = 'block';
+                } else {
+                    tabMonthly.classList.add('bg-white', 'text-black', 'shadow-sm');
+                    tabMonthly.classList.remove('text-gray-600');
+                    tabAnnual.classList.remove('bg-white', 'text-black', 'shadow-sm');
+                    tabAnnual.classList.add('text-gray-600');
+                    
+                    priceBasic.textContent = `${monthlyPrices.basic}€`;
+                    periodBasic.textContent = '/mes';
+                    annualSavingsBasic.style.visibility = 'hidden';
+                    popularBadgeBasic.style.display = 'block';
+                    
+                    pricePremium.textContent = `${monthlyPrices.premium}€`;
+                    periodPremium.textContent = '/mes';
+                    annualSavingsPremium.style.visibility = 'hidden';
+                    popularBadgePremium.style.display = 'none';
+                }
+            }
+
+            if (tabMonthly && tabAnnual) {
+                tabMonthly.addEventListener('click', () => {
+                    isAnnual = false;
+                    updatePricing();
+                });
+
+                tabAnnual.addEventListener('click', () => {
+                    isAnnual = true;
+                    updatePricing();
+                });
             }
         });
     </script>
