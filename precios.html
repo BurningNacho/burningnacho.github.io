@@ -126,16 +126,23 @@
         .table-blur::after {
             content: '';
             position: absolute;
-            top: 200px;
+            top: 240px;
             bottom: 0;
             left: 0;
             right: 0;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.95) 100%);
             pointer-events: none;
             transition: opacity 0.3s ease;
+            z-index: 1;
         }
         .table-blur.expanded::after {
             opacity: 0;
+        }
+        .hidden-rows {
+            display: none !important;
+        }
+        .table-blur.expanded .hidden-rows {
+            display: table-row !important;
         }
     </style>
 </head>
@@ -307,7 +314,7 @@
                                     <th class="text-center p-4 font-semibold text-gray-700">Básico</th>
                                     <th class="text-center p-4 font-semibold text-gray-700">Premium</th>
                                     <th class="text-center p-4 font-semibold text-gray-700">Enterprise</th>
-                                    <th class="text-center p-4 font-semibold text-gray-700">Competencia<br><span class="text-xs font-normal text-gray-500"></th>
+                                    <th class="text-center p-4 font-medium italic text-gray-700">Competencia<br><span class="text-xs font-normal text-black-500"></th>
                                 </tr>
                             </thead>
                             <tbody id="comparison-table-body">
@@ -316,13 +323,13 @@
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
-                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Límites por trimestre<br>(100-1000 facturas)</span></td>
+                                <td class="p-4 text-center"><span class="text-xs italic text-gray-500">Límites por trimestre<br>(100-1000 facturas)</span></td>
                             </tr>
                             <tr class="border-b border-gray-100">
-                                <td class="p-4 text-gray-700">Verifactu gratis</td>
+                                <td class="p-4 text-gray-700">Verifactu incluido</td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
-                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
-                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                             </tr>
                             <tr class="border-b border-gray-100">
@@ -330,64 +337,65 @@
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
-                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitada según<br>el plan</span></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitada según<br>el plan<br>(1, 2, 5 ...)</br></span></td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 text-gray-700">Asistente IA</td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitada por <br> uso diario</span></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
-                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
-                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitada según<br>el plan</span></td>
                             </tr>
-                            <tr class="border-b border-gray-100">
+                            <tr class="border-b border-gray-100 hidden-rows" style="display: none;">
                                 <td class="p-4 text-gray-700">Envío de facturas por email</td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                             </tr>
-                            <tr class="border-b border-gray-100">
+                            <tr class="border-b border-gray-100 hidden-rows" style="display: none;">
                                 <td class="p-4 text-gray-700">Tu subdominio gratis</td>
-                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                             </tr>
-                            <tr class="border-b border-gray-100">
+                            <tr class="border-b border-gray-100 hidden-rows" style="display: none;">
                                 <td class="p-4 text-gray-700">Soporte prioritario</td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
-                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</span></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</br></span></td>
                             </tr>
-                            <tr class="border-b border-gray-100">
+                            <tr class="border-b border-gray-100 hidden-rows" style="display: none;">
                                 <td class="p-4 text-gray-700">Integración empresarial</td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                                 <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</span></td>
                             </tr>
-                            <tr class="border-b border-gray-100">
+                            <tr class="border-b border-gray-100 hidden-rows" style="display: none;">
                                 <td class="p-4 text-gray-700">Sistemas adicionales (Fabricación, CRM, etc.)</td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
-                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</span></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
                             </tr>
-                            <tr class="border-b border-gray-100">
+                            <tr class="border-b border-gray-100 hidden-rows" style="display: none;">
                                 <td class="p-4 text-gray-700">Soporte dedicado</td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
-                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</span></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Según<br>plan escogido</span></td>
                             </tr>
-                            <tr class="border-b border-gray-100">
+                            <tr class="border-b border-gray-100 hidden-rows" style="display: none;">
                                 <td class="p-4 text-gray-700">Formación personalizada</td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
                                 <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
-                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Limitado según<br>plan escogido</span></td>
+                                <td class="p-4 text-center"><span class="text-xs text-gray-500">Según<br>plan escogido</span></td>
                             </tr>
+                            </tbody>
                         </tbody>
                         </table>
                     </div>
@@ -606,19 +614,28 @@
             // Table blur toggle functionality
             const tableBlurContainer = document.querySelector('.table-blur');
             const toggleButton = document.getElementById('toggle-table');
+            const hiddenRows = document.querySelectorAll('.hidden-rows');
             let isExpanded = false;
 
-            toggleButton.addEventListener('click', () => {
-                isExpanded = !isExpanded;
-                if (isExpanded) {
-                    tableBlurContainer.classList.add('expanded');
-                    toggleButton.textContent = 'Ocultar tabla';
-                } else {
-                    tableBlurContainer.classList.remove('expanded');
-                    toggleButton.textContent = 'Mostrar más';
-                }
-                initIcons();
-            });
+            if (toggleButton && hiddenRows.length > 0) {
+                toggleButton.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    if (isExpanded) {
+                        tableBlurContainer.classList.add('expanded');
+                        hiddenRows.forEach(row => {
+                            row.style.display = 'table-row';
+                        });
+                        toggleButton.textContent = 'Ocultar tabla';
+                    } else {
+                        tableBlurContainer.classList.remove('expanded');
+                        hiddenRows.forEach(row => {
+                            row.style.display = 'none';
+                        });
+                        toggleButton.textContent = 'Mostrar más';
+                    }
+                    initIcons();
+                });
+            }
         });
     </script>
 </body>
