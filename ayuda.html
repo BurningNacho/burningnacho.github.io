@@ -71,7 +71,7 @@
           "name": "¿Cómo creo mi cuenta?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Haz clic en \"Empezar ahora\" y completa el formulario de registro. En menos de 2 minutos tendrás tu cuenta activa y podrás empezar a facturar."
+            "text": "Haz clic en \"Empezar ahora\" y completa el formulario de registro. Tardamos menos de 24 horas en crear tu cuenta activa, sin importar el plan que selecciones, y podrás empezar a facturar."
           }
         },
         {
@@ -80,6 +80,30 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "No, VerifactVLC funciona completamente en la nube. Solo necesitas un navegador web (Chrome, Firefox, Safari, etc.) y conexión a internet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿VerifactVLC cumple con +Verifactu automáticamente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, todas las facturas que crees en VerifactVLC incluyen automáticamente el código QR y el registro inalterable requerido por +Verifactu. No necesitas configurar nada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo será obligatorio +Verifactu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "+Verifactu será obligatorio para empresas a partir del 1 de enero de 2026 y para autónomos desde el 1 de julio de 2026. Con VerifactVLC ya estás preparado desde ahora."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo enviar facturas por email?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, desde la vista de cada factura puedes hacer clic en \"Enviar por email\" y se enviará automáticamente a tu cliente en formato PDF."
           }
         }
       ]
@@ -161,7 +185,7 @@
             </div>
 
             <!-- Quick Links -->
-            <div class="grid md:grid-cols-3 gap-4 mb-16">
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
                 <a href="#empezar" class="bg-notion-lightgray border border-gray-200 rounded-lg p-6 hover:border-black transition-colors group">
                     <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform">
                         <i data-lucide="rocket" class="w-5 h-5"></i>
@@ -183,6 +207,34 @@
                     <h3 class="font-bold mb-1">+Verifactu</h3>
                     <p class="text-sm text-gray-600">Cumplimiento normativo</p>
                 </a>
+                <a href="#clientes-productos" class="bg-notion-lightgray border border-gray-200 rounded-lg p-6 hover:border-black transition-colors group">
+                    <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold mb-1">Clientes y productos</h3>
+                    <p class="text-sm text-gray-600">Gestionar tu catálogo</p>
+                </a>
+                <a href="#seguridad" class="bg-notion-lightgray border border-gray-200 rounded-lg p-6 hover:border-black transition-colors group">
+                    <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform">
+                        <i data-lucide="lock" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold mb-1">Seguridad</h3>
+                    <p class="text-sm text-gray-600">Protección de datos</p>
+                </a>
+                <a href="#precios" class="bg-notion-lightgray border border-gray-200 rounded-lg p-6 hover:border-black transition-colors group">
+                    <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform">
+                        <i data-lucide="credit-card" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold mb-1">Precios</h3>
+                    <p class="text-sm text-gray-600">Planes y facturación</p>
+                </a>
+                <a href="#odoo-tecnico" class="bg-notion-lightgray border border-gray-200 rounded-lg p-6 hover:border-black transition-colors group">
+                    <div class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform">
+                        <i data-lucide="settings" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold mb-1">Odoo y técnico</h3>
+                    <p class="text-sm text-gray-600">Integraciones y soporte</p>
+                </a>
             </div>
 
             <!-- FAQ Sections -->
@@ -197,7 +249,7 @@
                                 <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
                             </summary>
                             <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
-                                Haz clic en "Empezar ahora" y completa el formulario de registro. En menos de 2 minutos tendrás tu cuenta activa y podrás empezar a facturar.
+                                Haz clic en "Empezar ahora" y completa el formulario de registro. Tardamos menos de 24 horas en crear tu cuenta activa, sin importar el plan que selecciones, y podrás empezar a facturar.
                             </p>
                         </details>
 
@@ -208,6 +260,66 @@
                             </summary>
                             <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
                                 No, VerifactVLC funciona completamente en la nube. Solo necesitas un navegador web (Chrome, Firefox, Safari, etc.) y conexión a internet.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Qué información necesito para registrarme?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Solo necesitas tu nombre, email y datos básicos de tu negocio (NIF/CIF, nombre de la empresa o autónomo). El proceso es rápido y sencillo.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo probar VerifactVLC antes de pagar?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes crear tu cuenta y empezar a facturar de forma gratuita. Consulta nuestros planes en la página de precios para conocer los límites y características de cada uno.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Funciona en móviles y tablets?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, VerifactVLC es completamente responsive y funciona perfectamente en cualquier dispositivo: ordenador, tablet o móvil. Accede desde cualquier navegador.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Necesito un certificado digital para usar VerifactVLC?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Es necesario tener un certificado digital para usar VerifactVLC. El sistema gestiona la firma electrónica y el cumplimiento normativo.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo tener varios usuarios en mi cuenta?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, dependiendo de tu plan puedes añadir múltiples usuarios con diferentes permisos. Esto es especialmente útil para equipos que necesitan trabajar colaborativamente.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Qué navegadores son compatibles?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                VerifactVLC funciona en todos los navegadores modernos: Chrome, Firefox, Safari, Edge y Opera. Recomendamos usar la última versión de tu navegador para la mejor experiencia.
                             </p>
                         </details>
                     </div>
@@ -236,6 +348,96 @@
                                 Sí, desde la vista de cada factura puedes hacer clic en "Enviar por email" y se enviará automáticamente a tu cliente en formato PDF.
                             </p>
                         </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo descargar mis facturas en PDF?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, todas las facturas pueden descargarse en formato PDF con un solo clic. El PDF incluye el código QR y cumple con todos los requisitos legales.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo modificar o anular una factura ya emitida?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes crear facturas rectificativas o anular facturas cuando sea necesario. El sistema mantiene el historial completo y cumple con la normativa fiscal.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Cómo gestiono los diferentes tipos de IVA?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Puedes configurar diferentes tipos de IVA (21%, 10%, 4%, exento, etc.) para cada producto o servicio. El sistema calcula automáticamente los importes correctos.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo exportar mis facturas para la contabilidad?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes exportar tus facturas en diferentes formatos (PDF, Excel, CSV) para facilitar la gestión contable y la presentación de impuestos.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo crear presupuestos además de facturas?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes crear presupuestos que luego puedes convertir fácilmente en facturas cuando el cliente los apruebe. Esto te ayuda a gestionar mejor tus ventas.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo crear facturas recurrentes?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes configurar facturas recurrentes para clientes con pagos periódicos (mensuales, trimestrales, etc.). El sistema las generará automáticamente según la frecuencia que definas.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo crear albaranes o recibos?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, VerifactVLC te permite crear diferentes tipos de documentos: facturas, albaranes, recibos y otros documentos comerciales según tus necesidades.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Cómo personalizo el diseño de mis facturas?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Puedes personalizar tus facturas añadiendo tu logo, colores corporativos y ajustando la información que aparece. Las opciones de personalización están disponibles en la configuración de tu cuenta.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo generar informes de ventas e ingresos?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes generar informes detallados de ventas, ingresos por período, clientes más importantes y otros análisis que te ayudan a tomar mejores decisiones de negocio.
+                            </p>
+                        </details>
                     </div>
                 </section>
 
@@ -260,6 +462,300 @@
                             </summary>
                             <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
                                 No, VerifactVLC está homologado y cumple con la normativa desde el primer día. Solo factura normalmente y nosotros nos encargamos del resto.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Cuándo será obligatorio +Verifactu?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                +Verifactu será obligatorio para empresas a partir del 1 de enero de 2026 y para autónomos desde el 1 de julio de 2026. Con VerifactVLC ya estás preparado desde ahora.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Qué es el código QR en las facturas?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                El código QR es un elemento obligatorio que permite verificar la autenticidad de la factura. Contiene información encriptada que se envía automáticamente a Hacienda. VerifactVLC lo genera automáticamente en todas tus facturas.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Qué pasa si no cumplo con +Verifactu?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                El incumplimiento puede resultar en sanciones económicas y la invalidación de facturas ante Hacienda. Por eso es importante usar un software homologado como VerifactVLC que cumple automáticamente con todos los requisitos.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Qué es la huella digital (hash) en las facturas?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                La huella digital es un código único generado a partir del contenido de la factura que garantiza su integridad e inalterabilidad. VerifactVLC genera automáticamente esta huella para cada factura según la normativa.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Las facturas se envían automáticamente a Hacienda?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, cuando creas una factura, VerifactVLC genera automáticamente el registro y lo envía a la Agencia Tributaria en tiempo real, cumpliendo con todos los requisitos de +Verifactu sin que tengas que hacer nada adicional.
+                            </p>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- Clientes y productos -->
+                <section id="clientes-productos" class="faq-section">
+                    <h2 class="text-2xl font-bold mb-6">Clientes y productos</h2>
+                    <div class="space-y-4">
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Cómo añado un nuevo cliente?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Ve a la sección "Clientes" y haz clic en "Nuevo cliente". Completa los datos básicos (nombre, NIF, dirección, email) y guárdalo. Podrás usarlo en todas tus facturas futuras.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo crear un catálogo de productos o servicios?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes crear y gestionar un catálogo completo de productos y servicios con precios, descripciones y tipos de IVA. Esto te ahorrará tiempo al crear facturas.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo importar mis clientes desde otro sistema?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes importar clientes y productos desde archivos CSV o Excel. Contacta con nuestro soporte si necesitas ayuda con la importación de datos.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo organizar mis productos por categorías?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes crear categorías y subcategorías para organizar mejor tu catálogo de productos y servicios. Esto facilita la búsqueda y gestión cuando tienes muchos productos.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo gestionar descuentos y ofertas especiales?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes aplicar descuentos porcentuales o fijos a productos individuales o a facturas completas. También puedes crear códigos de descuento para promociones especiales.
+                            </p>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- Seguridad y privacidad -->
+                <section id="seguridad" class="faq-section">
+                    <h2 class="text-2xl font-bold mb-6">Seguridad y privacidad</h2>
+                    <div class="space-y-4">
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Dónde se almacenan mis datos?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Todos tus datos se almacenan de forma segura en servidores ubicados en la Unión Europea, cumpliendo con el RGPD. Tus datos son tuyos y solo tú decides quién puede acceder a ellos.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Cómo protegen mi información?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Utilizamos encriptación de extremo a extremo, copias de seguridad automáticas y medidas de seguridad avanzadas. Tu información está protegida con los más altos estándares de la industria.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo exportar mis datos si quiero cambiar de plataforma?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes exportar todos tus datos (facturas, clientes, productos) en cualquier momento en formatos estándar. Tus datos te pertenecen y puedes llevártelos cuando quieras.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Hacen copias de seguridad de mis datos?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, realizamos copias de seguridad automáticas diarias de todos los datos. Tus facturas y información están protegidas y se pueden recuperar en caso de cualquier incidencia.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Quién puede ver mis datos?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Solo tú y los usuarios que autorices en tu cuenta pueden acceder a tus datos. Nosotros nunca accedemos a tu información sin tu permiso, excepto para proporcionar soporte técnico cuando lo solicites.
+                            </p>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- Precios y facturación -->
+                <section id="precios" class="faq-section">
+                    <h2 class="text-2xl font-bold mb-6">Precios y facturación</h2>
+                    <div class="space-y-4">
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Qué métodos de pago aceptan?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Aceptamos tarjetas de crédito y débito, transferencias bancarias y otros métodos de pago seguros. El proceso es rápido y seguro.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo cambiar de plan en cualquier momento?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes cambiar de plan en cualquier momento desde tu panel de control. Si subes de plan, el cambio es inmediato. Si bajas, se aplicará en el siguiente ciclo de facturación.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Qué pasa si cancelo mi suscripción?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Puedes cancelar tu suscripción en cualquier momento sin penalizaciones. Podrás seguir accediendo a tus datos y facturas hasta el final del período pagado. Después, podrás exportar todos tus datos.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Ofrecen factura para mi empresa?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, emitimos facturas para todas las suscripciones. Recibirás automáticamente la factura por email después de cada pago, con todos los datos necesarios para tu contabilidad.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Hay límite de facturas que puedo emitir?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Los límites dependen del plan que elijas. Consulta nuestra página de precios para ver los detalles de cada plan. Si necesitas más capacidad, puedes cambiar de plan en cualquier momento.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo pagar anualmente con descuento?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, ofrecemos descuentos para pagos anuales. Consulta nuestra página de precios para ver las opciones disponibles y ahorrar en tu suscripción.
+                            </p>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- Odoo y técnico -->
+                <section id="odoo-tecnico" class="faq-section">
+                    <h2 class="text-2xl font-bold mb-6">Odoo y temas técnicos</h2>
+                    <div class="space-y-4">
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Qué es Odoo y por qué lo usan?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Odoo es una suite de software empresarial de código abierto que incluye CRM, ERP, facturación y mucho más. VerifactVLC está construido sobre Odoo, aprovechando su potencia y flexibilidad para ofrecerte una solución completa y confiable.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo integrar VerifactVLC con otros sistemas?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, VerifactVLC ofrece API y opciones de integración para conectar con otros sistemas como contabilidad, e-commerce, bancos y más. Contacta con nuestro soporte para conocer las opciones disponibles.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Qué pasa si tengo problemas técnicos?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Nuestro equipo de soporte está disponible para ayudarte. Puedes contactarnos por email y te responderemos lo antes posible. También ofrecemos documentación detallada y guías paso a paso.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿El sistema se actualiza automáticamente?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, VerifactVLC se actualiza automáticamente con las últimas mejoras, correcciones de seguridad y adaptaciones a nuevas normativas. No necesitas hacer nada, siempre tendrás la versión más actualizada.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Puedo facturar a clientes de otros países?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Sí, puedes crear facturas para clientes internacionales. El sistema te permite configurar diferentes monedas, tipos de IVA según el país y otros ajustes necesarios para facturación internacional.
+                            </p>
+                        </details>
+
+                        <details class="faq-item group bg-white rounded-lg border border-gray-200 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-black transition-colors">
+                            <summary class="flex items-center justify-between gap-4 font-medium text-lg select-none">
+                                <span class="faq-question">¿Qué pasa si olvido mi contraseña?</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 group-open:text-black"></i>
+                            </summary>
+                            <p class="faq-answer mt-4 text-gray-600 leading-relaxed">
+                                Puedes recuperar tu contraseña usando el enlace "¿Olvidaste tu contraseña?" en la página de inicio de sesión. Recibirás un email con instrucciones para crear una nueva contraseña de forma segura.
                             </p>
                         </details>
                     </div>

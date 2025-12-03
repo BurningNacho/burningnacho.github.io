@@ -11,7 +11,7 @@ function renderPromoBanner() {
                     <span class="font-bold">Anticípate a Verifactu:</span>
                     <span class="ml-1 font-semibold">50% descuento por 3 meses</span>
                 </div>
-                <div class="flex items-center gap-2" id="countdown-timer">
+                <div class="flex items-center justify-center gap-2" id="countdown-timer">
                     <div class="flex flex-col items-center">
                         <span class="font-bold text-xl" id="countdown-days">0</span>
                         <span class="text-[10px] font-medium text-blue-200">D</span>
@@ -44,7 +44,7 @@ function renderPromoBanner() {
                     <span class="ml-1 font-semibold">50% descuento por 3 meses</span>
                 </div>
                 
-                <div class="flex items-center gap-3 lg:gap-4" id="countdown-timer-desktop">
+                <div class="flex items-center justify-center gap-3 lg:gap-4" id="countdown-timer-desktop">
                     <div class="flex flex-col items-center">
                         <span class="font-bold text-2xl lg:text-3xl" id="countdown-days-desktop">0</span>
                         <span class="text-xs lg:text-sm font-medium text-blue-200">DÍAS</span>

@@ -121,6 +121,23 @@
         .skip-link:focus {
             top: 0;
         }
+        .table-blur {
+            position: relative;
+        }
+        .table-blur::after {
+            content: '';
+            position: absolute;
+            top: 200px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.95) 100%);
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .table-blur.expanded::after {
+            opacity: 0;
+        }
     </style>
 </head>
 <body class="bg-white text-notion-text font-sans selection:bg-purple-100 flex flex-col min-h-screen">
@@ -145,15 +162,38 @@
                 <p class="text-xl text-gray-600">Elige el plan que mejor se adapte a tu negocio</p>
             </div>
 
+            <!-- Billing Toggle -->
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex bg-gray-100 rounded-lg p-1 gap-1">
+                    <button id="tab-monthly" class="px-6 py-2 rounded-md font-medium transition-colors bg-white text-black shadow-sm">
+                        Mensual
+                    </button>
+                    <button id="tab-annual" class="px-6 py-2 rounded-md font-medium transition-colors text-gray-600 hover:text-black">
+                        Anual
+
+                    </button>
+                </div>
+            </div>
+
             <!-- Pricing Cards -->
             <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <!-- Plan Mensual -->
-                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-black transition-colors">
+                <!-- Plan Básico -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-black transition-colors relative">
+                    <div id="popular-badge-basic" class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                        Más popular
+                    </div>
                     <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Plan Mensual</h3>
+                        <h3 class="text-2xl font-bold mb-2">Básico</h3>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-4xl font-bold">29€</span>
-                            <span class="text-gray-500">/mes</span>
+                            <span class="text-4xl font-bold" id="price-basic">29€</span>
+                            <span class="text-gray-500" id="period-basic">/mes</span>
+                        </div>
+                        <div class="mt-2 h-5" id="annual-savings-basic" style="visibility: hidden;">
+                            <span class="text-sm text-gray-500 line-through" id="annual-price-basic"></span>
+                            <span class="text-sm text-green-500 ml-2" id="annual-savings-text-basic"></span>
+                        </div>
+                        <div class="mt-4 flex justify-center">
+                            <span class="bg-green-100 text-black px-4 py-1.5 rounded-md text-sm font-medium">Incluye Verifactu</span>
                         </div>
                     </div>
                     <ul class="space-y-3 mb-8">
@@ -178,28 +218,34 @@
                             <span>Envío de facturas por email</span>
                         </li>
                     </ul>
-                    <a href="mailto:verifactvlc@gmail.com?subject=Registro Plan Mensual" class="block w-full text-center py-3 bg-gray-100 text-black rounded-[4px] font-medium hover:bg-gray-200 transition-colors" aria-label="Empezar con plan mensual">
+                    <a href="mailto:verifactvlc@gmail.com?subject=Registro Plan Básico" class="block w-full text-center py-3 bg-gray-100 text-black rounded-[4px] font-medium hover:bg-gray-200 transition-colors" aria-label="Empezar con plan básico">
                         Empezar ahora
                     </a>
                 </div>
 
                 <!-- Plan Anual (Recomendado) -->
                 <div class="bg-black text-white border-2 border-black rounded-xl p-8 relative hover:scale-[1.02] transition-transform shadow-lg">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                    <div id="popular-badge-premium" class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium" style="display: none;">
                         Más popular
                     </div>
                     <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Plan Anual</h3>
+                        <h3 class="text-2xl font-bold mb-2">Premium</h3>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-4xl font-bold">290€</span>
-                            <span class="text-gray-400">/año</span>
+                            <span class="text-4xl font-bold" id="price-premium">39€</span>
+                            <span class="text-gray-400" id="period-premium">/mes</span>
                         </div>
-                        <p class="text-sm text-gray-400 mt-2">Ahorra 58€ al año</p>
+                        <div class="mt-2 h-5" id="annual-savings-premium" style="visibility: hidden;">
+                            <span class="text-sm text-gray-400 line-through" id="annual-price-premium"></span>
+                            <span class="text-sm text-green-400 ml-2" id="annual-savings-text-premium"></span>
+                        </div>
+                        <div class="mt-4 flex justify-center">
+                            <span class="bg-green-500 text-white px-4 py-1.5 rounded-md text-sm font-medium">Incluye Verifactu</span>
+                        </div>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-5 h-5 text-green-400" aria-hidden="true"></i>
-                            <span>Todo del plan mensual</span>
+                            <span>Todo del plan básico</span>
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-5 h-5 text-green-400" aria-hidden="true"></i>
@@ -210,7 +256,7 @@
                             <span>Soporte prioritario</span>
                         </li>
                     </ul>
-                    <a href="mailto:verifactvlc@gmail.com?subject=Registro Plan Anual" class="block w-full text-center py-3 bg-white text-black rounded-[4px] font-medium hover:bg-gray-100 transition-colors" aria-label="Empezar con plan anual">
+                    <a href="mailto:verifactvlc@gmail.com?subject=Registro Plan Premium" class="block w-full text-center py-3 bg-white text-black rounded-[4px] font-medium hover:bg-gray-100 transition-colors" aria-label="Empezar con plan premium">
                         Empezar ahora
                     </a>
                 </div>
@@ -218,15 +264,18 @@
                 <!-- Plan Enterprise -->
                 <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-black transition-colors">
                     <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Plan Enterprise</h3>
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
                         <div class="flex items-baseline gap-2">
                             <span class="text-4xl font-bold">Personalizado</span>
+                        </div>
+                        <div class="mt-4 flex justify-center">
+                            <span class="bg-green-100 text-black px-4 py-1.5 rounded-md text-sm font-medium">Incluye Verifactu</span>
                         </div>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center gap-2 text-gray-700">
                             <i data-lucide="check" class="w-5 h-5 text-green-500" aria-hidden="true"></i>
-                            <span>Todo del plan anual</span>
+                            <span>Todo del plan premium</span>
                         </li>
                         <li class="flex items-center gap-2 text-gray-700">
                             <i data-lucide="check" class="w-5 h-5 text-green-500" aria-hidden="true"></i>
@@ -248,6 +297,98 @@
                     <a href="mailto:verifactvlc@gmail.com?subject=Consulta Plan Enterprise" class="block w-full text-center py-3 bg-gray-100 text-black rounded-[4px] font-medium hover:bg-gray-200 transition-colors" aria-label="Contactar sobre plan enterprise">
                         Contacta con Nosotros
                     </a>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-center">Comparación de planes</h2>
+                <div class="overflow-x-auto relative">
+                    <div class="table-blur relative">
+                        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+                            <thead>
+                                <tr class="bg-gray-50 border-b-2 border-gray-200">
+                                    <th class="text-left p-4 font-semibold text-gray-700">Funcionalidades</th>
+                                    <th class="text-center p-4 font-semibold text-gray-700">Básico</th>
+                                    <th class="text-center p-4 font-semibold text-gray-700">Premium</th>
+                                    <th class="text-center p-4 font-semibold text-gray-700">Enterprise</th>
+                                </tr>
+                            </thead>
+                            <tbody id="comparison-table-body">
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">Facturación ilimitada</td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">+Verifactu incluido</td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">Conexión bancaria</td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">Asistente IA</td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">Envío de facturas por email</td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">Dominio gratis (primer año)</td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">Soporte prioritario</td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">Integración empresarial</td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">Sistemas adicionales (Fabricación, CRM, etc.)</td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">Soporte dedicado</td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 text-gray-700">Formación personalizada</td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="x" class="w-5 h-5 text-gray-300 mx-auto"></i></td>
+                                <td class="p-4 text-center"><i data-lucide="check" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button id="toggle-table" class="text-gray-600 hover:text-black font-medium transition-colors">
+                        Mostrar más
+                    </button>
                 </div>
             </div>
 
@@ -300,6 +441,20 @@
     <script src="components/analytics.js"></script>
     <script src="components/cookie-consent.js"></script>
     <script>
+        // Initialize icons function
+        function initIcons() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+        
+        // Initialize icons as soon as Lucide is loaded
+        if (typeof lucide !== 'undefined') {
+            initIcons();
+        } else {
+            window.addEventListener('load', initIcons);
+        }
+        
         // Inject components after page load
         document.addEventListener('DOMContentLoaded', function() {
             // Inject promo banner
@@ -350,9 +505,110 @@
             }
 
             // Reinitialize icons after injection
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
+            initIcons();
+            
+            // Reinitialize icons after a short delay to ensure all components are injected
+            setTimeout(initIcons, 100);
+
+            // Pricing tabs functionality
+            const tabMonthly = document.getElementById('tab-monthly');
+            const tabAnnual = document.getElementById('tab-annual');
+            const priceBasic = document.getElementById('price-basic');
+            const periodBasic = document.getElementById('period-basic');
+            const annualSavingsBasic = document.getElementById('annual-savings-basic');
+            const annualPriceBasic = document.getElementById('annual-price-basic');
+            const annualSavingsTextBasic = document.getElementById('annual-savings-text-basic');
+            const popularBadgeBasic = document.getElementById('popular-badge-basic');
+            const pricePremium = document.getElementById('price-premium');
+            const periodPremium = document.getElementById('period-premium');
+            const annualSavingsPremium = document.getElementById('annual-savings-premium');
+            const annualPricePremium = document.getElementById('annual-price-premium');
+            const annualSavingsTextPremium = document.getElementById('annual-savings-text-premium');
+            const popularBadgePremium = document.getElementById('popular-badge-premium');
+
+            const monthlyPrices = {
+                basic: 29,
+                premium: 39
+            };
+            const annualPrices = {
+                basic: 290,
+                premium: 390
+            };
+            const savings = {
+                basic: 58,
+                premium: 78
+            };
+
+            let isAnnual = false;
+
+            function updatePricing() {
+                if (isAnnual) {
+                    tabMonthly.classList.remove('bg-white', 'text-black', 'shadow-sm');
+                    tabMonthly.classList.add('text-gray-600');
+                    tabAnnual.classList.add('bg-white', 'text-black', 'shadow-sm');
+                    tabAnnual.classList.remove('text-gray-600');
+                    
+                    const monthlyBasic = (annualPrices.basic / 12).toFixed(2).replace('.', ',');
+                    priceBasic.textContent = `${monthlyBasic}€`;
+                    periodBasic.textContent = '/mes';
+                    const annualTotalBasic = (monthlyPrices.basic * 12).toFixed(2).replace('.', ',');
+                    annualPriceBasic.textContent = `${annualTotalBasic}€`;
+                    annualSavingsTextBasic.textContent = `Ahorra ${savings.basic}€ al año`;
+                    annualSavingsBasic.style.visibility = 'visible';
+                    popularBadgeBasic.style.display = 'none';
+                    
+                    const monthlyPremium = (annualPrices.premium / 12).toFixed(2).replace('.', ',');
+                    pricePremium.textContent = `${monthlyPremium}€`;
+                    periodPremium.textContent = '/mes';
+                    const annualTotalPremium = (monthlyPrices.premium * 12).toFixed(2).replace('.', ',');
+                    annualPricePremium.textContent = `${annualTotalPremium}€`;
+                    annualSavingsTextPremium.textContent = `Ahorra ${savings.premium}€ al año`;
+                    annualSavingsPremium.style.visibility = 'visible';
+                    popularBadgePremium.style.display = 'block';
+                } else {
+                    tabMonthly.classList.add('bg-white', 'text-black', 'shadow-sm');
+                    tabMonthly.classList.remove('text-gray-600');
+                    tabAnnual.classList.remove('bg-white', 'text-black', 'shadow-sm');
+                    tabAnnual.classList.add('text-gray-600');
+                    
+                    priceBasic.textContent = `${monthlyPrices.basic}€`;
+                    periodBasic.textContent = '/mes';
+                    annualSavingsBasic.style.visibility = 'hidden';
+                    popularBadgeBasic.style.display = 'block';
+                    
+                    pricePremium.textContent = `${monthlyPrices.premium}€`;
+                    periodPremium.textContent = '/mes';
+                    annualSavingsPremium.style.visibility = 'hidden';
+                    popularBadgePremium.style.display = 'none';
+                }
             }
+
+            tabMonthly.addEventListener('click', () => {
+                isAnnual = false;
+                updatePricing();
+            });
+
+            tabAnnual.addEventListener('click', () => {
+                isAnnual = true;
+                updatePricing();
+            });
+
+            // Table blur toggle functionality
+            const tableBlurContainer = document.querySelector('.table-blur');
+            const toggleButton = document.getElementById('toggle-table');
+            let isExpanded = false;
+
+            toggleButton.addEventListener('click', () => {
+                isExpanded = !isExpanded;
+                if (isExpanded) {
+                    tableBlurContainer.classList.add('expanded');
+                    toggleButton.textContent = 'Ocultar tabla';
+                } else {
+                    tableBlurContainer.classList.remove('expanded');
+                    toggleButton.textContent = 'Mostrar más';
+                }
+                initIcons();
+            });
         });
     </script>
 </body>
