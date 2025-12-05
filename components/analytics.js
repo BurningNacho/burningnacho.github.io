@@ -2,9 +2,9 @@
  * Analytics Component - Google Analytics 4 (GA4) integration
  *
  * SETUP INSTRUCTIONS:
- * 1. Get your GA4 Measurement ID from Google Analytics (format: G-XXXXXXXXXX)
+ * 1. Get your GA4 Measurement ID from Google Analytics (format: G-QTBRTN8026)
  * 2. Add this script before </head> in your HTML pages:
- *    <script>window.GA4_MEASUREMENT_ID = 'G-XXXXXXXXXX';</script>
+ *    <script>window.GA4_MEASUREMENT_ID = 'G-QTBRTN8026';</script>
  *
  * FEATURES:
  * - GDPR compliant: Only loads if user accepts cookies
@@ -20,7 +20,7 @@ function renderAnalytics() {
   const GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || "";
 
   // If no ID is set, return empty (analytics disabled)
-  if (!GA4_MEASUREMENT_ID || GA4_MEASUREMENT_ID === "G-XXXXXXXXXX") {
+  if (!GA4_MEASUREMENT_ID || GA4_MEASUREMENT_ID === "G-QTBRTN8026") {
     return "";
   }
 
@@ -52,7 +52,7 @@ function renderAnalytics() {
 function initAnalytics() {
   const GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || "";
 
-  if (!GA4_MEASUREMENT_ID || GA4_MEASUREMENT_ID === "G-XXXXXXXXXX") {
+  if (!GA4_MEASUREMENT_ID || GA4_MEASUREMENT_ID === "G-QTBRTN8026") {
     return;
   }
 
